@@ -1,29 +1,31 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
 }
 
 .navbar {
   background: #0f172a;
   color: white;
-  padding: 15px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .navbar a {
   color: white;
-  margin-left: 15px;
+  margin-left: 20px;
   text-decoration: none;
+  font-size: 14px;
 }
 
 main {
   padding: 20px;
 }
+
 .card {
-  background: white;
+  background: #eaeaea;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 15px;
 }

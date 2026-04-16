@@ -11,26 +11,14 @@ function navigate(page) {
           🎤 Enviar por áudio
         </button>
       </div>
-
-      <div class="card">
-        <h3>Agendar transporte</h3>
-        <button onclick="navigate('agendar')">Agendar agora</button>
-      </div>
-
-      <div class="card">
-        <h3>Planos disponíveis</h3>
-        <button onclick="navigate('planos')">Ver planos</button>
-      </div>
     `;
   }
 
   if (page === "agendar") {
     app.innerHTML = `
       <div class="card">
-        <h2>Agendar Corrida</h2>
-        <input placeholder="Origem"><br><br>
-        <input placeholder="Destino"><br><br>
-        <button>Confirmar</button>
+        <h2>Agendar transporte</h2>
+        <p>Preencha os dados do seu trajeto.</p>
       </div>
     `;
   }
@@ -38,7 +26,7 @@ function navigate(page) {
   if (page === "planos") {
     app.innerHTML = `
       <div class="card">
-        <h2>Planos</h2>
+        <h2>Planos disponíveis</h2>
         <p>Trabalho | Escolar | Idosos | Aeroporto | Avulso</p>
       </div>
     `;
@@ -48,7 +36,7 @@ function navigate(page) {
     app.innerHTML = `
       <div class="card">
         <h2>Contato</h2>
-        <p>WhatsApp disponível</p>
+        <p>Fale conosco pelo WhatsApp</p>
       </div>
     `;
   }
