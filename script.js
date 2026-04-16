@@ -4,40 +4,40 @@ function navigate(page) {
   if (page === "home") {
     app.innerHTML = `
       <div class="card">
-        <h2>Transporte confiável com rotas fixas</h2>
-        <p>Agendamento fácil para trabalho, escola e aeroporto.</p>
-      </div>
-    `;
-  }
+        <h2>Atendimento Rota Fixa 🚗</h2>
+        <p>Você terá sempre o mesmo motorista.</p>
 
-  if (page === "agendar") {
-    app.innerHTML = `
-      <div class="card">
-        <h2>Agendar Corrida</h2>
-        <input placeholder="Origem" /><br><br>
-        <input placeholder="Destino" /><br><br>
-        <button onclick="alert('Agendado!')">Confirmar</button>
-      </div>
-    `;
-  }
+        <button onclick="abrirWhatsAppAudio()">
+          🎤 Enviar pedido por áudio
+        </button>
 
-  if (page === "planos") {
-    app.innerHTML = `
-      <div class="card">
-        <h2>Planos</h2>
-        <p>Plano Diário, Semanal e Mensal</p>
-      </div>
-    `;
-  }
-
-  if (page === "contato") {
-    app.innerHTML = `
-      <div class="card">
-        <h2>Contato</h2>
-        <p>WhatsApp: (xx) xxxxx-xxxx</p>
+        <p style="margin-top:10px;">
+          Você será direcionado para o WhatsApp para gravar o áudio.
+        </p>
       </div>
     `;
   }
 }
 
 navigate("home");
+
+function abrirWhatsAppAudio() {
+  const numero = "5567999999999"; // 🔴 coloque seu número
+
+  const mensagem = encodeURIComponent(
+`Olá! Quero fazer um pré-agendamento 🚗
+
+Vou te enviar um áudio com:
+- Local de saída
+- Destino
+- Horário
+- Tipo (ida ou ida e volta)
+- Período
+
+Você terá sempre o mesmo motorista.`
+  );
+
+  const url = `https://wa.me/${numero}?text=${mensagem}`;
+
+  window.open(url, "_blank");
+}
