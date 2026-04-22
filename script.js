@@ -62,3 +62,25 @@ Você terá sempre o mesmo motorista.`
 }
 
 navigate("home");
+async function calcularRota() {
+  const origem = document.getElementById("origem").value;
+  const destino = document.getElementById("destino").value;
+
+  const apiKey = "SUA_API_KEY_AQUI";
+
+  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origem}&destinations=${destino}&key=${apiKey}`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  const distancia = data.rows[0].elements[0].distance.value / 1000; // km
+  const tempo = data.rows[0].elements[0].duration.text;
+
+  // custo real (ajuste aqui)
+  const valorPorKm = 2.5;
+
+  const valor = (distancia * valorPorKm).toFixed(2);
+
+  document.getElementById("resultado").innerText =
+    `Distância: ${distancia.toFixed(2)} km | Tempo: ${tempo} | Valor: R$ ${valor}`;
+}
