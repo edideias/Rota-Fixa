@@ -84,3 +84,24 @@ async function calcularRota() {
   document.getElementById("resultado").innerText =
     `Distância: ${distancia.toFixed(2)} km | Tempo: ${tempo} | Valor: R$ ${valor}`;
 }
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD52VZorzfJGWI6yq_LOeKd__P-GnPHsZY",
+  authDomain: "rota-fixa.firebaseapp.com",
+  projectId: "rota-fixa",
+  storageBucket: "rota-fixa.firebasestorage.app",
+  messagingSenderId: "865771687482",
+  appId: "1:865771687482:web:2151fb1527395504a32f03",
+  measurementId: "G-2S028P5BQ0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
